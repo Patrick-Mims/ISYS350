@@ -33,18 +33,25 @@ print ("\n")
 
 count = 0
 
-while count < months:  
-    monthly_payment = (loan_amount * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
+#monthly_payment = (loan_amount * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
 
-    print ("\t{0}{1:25.2f}".format(count, round(monthly_payment, 2)))
-
+monthly_payment = (loan_amount * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
+while count < months:
+    interest_amount = (loan_amount * (interest_rate / months))
+    principal_amount = monthly_payment - interest_amount
+    balance_remaining = (loan_amount - principal_amount)
+    print ("\t{0}{1:25.2f}{2:30.2f}{3:30.2f}{4:30.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(principal_amount, 2), round(balance_remaining, 2)))
     count = count + 1
+    loan_amount = balance_remaining 
 
+    # Interest
     # The amount of interest column is calculated by multiplying the 
-    # previous month's remaining balance by annual_rate / 12
-#    interest_amount = loan_amount * (interest_rate / months)
-#    principal_amount = monthly_payment - interest_amount
-#    balance_remaining = loan_amount - principal_amount
+    # previous months remaining balance by annual_rate / 12
 
-#   loan_amount = monthly_payment - balance_remaining
-#    print ("\t{0}{1:25.2f}{2:30.2f}{3:30.2f}{4:30.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(principal_amount, 2), round(balance_remaining, 2)))
+    # Principal
+    # The amount of principal is calculated by subtracting the amount
+    # of interest from the monthly payment.
+
+    # Remaining Balance
+    # The remaining balance is calculated by subtracting the amount of
+    # principal from the previous month's remaining balance. 
