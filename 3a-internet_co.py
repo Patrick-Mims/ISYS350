@@ -90,110 +90,244 @@
 # 
 # Copy the source code and paste to a Word document, and copy the output and paste it to the same Word document. Submit the Word document by email attachment.
 
-#!/usr/bin/python
+# #!/usr/bin/python
+# 
+# def calculate(choice, hours, n):
+# 
+#     service_charge = 0
+#     discount_rate = .20
+# 
+#     # calculate discount
+#     if choice == 'a':
+#         base_rate = 12.95
+#         base_hour = 10
+# 
+#         # check for discount
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with a"
+#         else:
+#             discount = 0
+#             message = "with out a"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         # calculate additional hours 
+#         if hours > base_hour:
+#             additional_hours = hours - base_hour
+#         else:
+#             additional_hours = 0
+# 
+#         service_charge = (additional_hours * 4.00)
+# 
+#         total = service_charge + (base_rate - discount)
+# 
+#         print("\nTotal Package Deal: $",total,"per month",message,"$",discount,"discount\n")
+# 
+#     elif choice == 'b':
+#         base_rate = 14.95
+#         base_hour = 20
+# 
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with"
+#         else:
+#             discount = 0
+#             message = "with out"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         # calculate additional hours 
+#         if hours > base_hour:
+#             additional_hours = hours - base_hour
+#         else:
+#             additional_hours = 0
+# 
+#         # multiply the additional_hours by the extra $2.00
+#         service_charge = (additional_hours * 2.00)
+# 
+#         # calculate the total
+#         total = service_charge + (base_rate - discount)
+# 
+#         #print("The service charge for package", choice, "is", total, "per month")
+#         print("\nTotal Package Deal: $"'{0:.2f}'.format(total),"per month",message,"a $",discount,"discount\n")
+#     elif choice == 'c':
+#         base_rate = 35.95
+# 
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with"
+#         else:
+#             discount = 0
+#             message = "with out"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         total = service_charge + (base_rate - discount)
+# 
+#         print("\nTotal Package Deal:",total,"per month",message,"a $",'{0:.2f}'.format(discount),"discount\n")
+#     else: 
+#         print("That's not an option")
+# 
+#     return
+# 
+# i = 1
+# 
+# # simple while loop 
+# while i <= 6:
+# 
+#     pkg = input("\nEnter package (A, B, C): ") 
+# 
+#     if pkg == 'a' or pkg == 'b' or pkg == 'c':
+#         hrs = int(input('Enter hours used: '))
+#         isNonProfit = input("Are you a non-profit organization?(y/n): ")
+#     else:
+#         print("That's not an option!")
+#         i += 1
+# 
+#     calculate(pkg, hrs, isNonProfit)
+# 
+#     i += 1
 
-def calculate(choice, hours, n):
+count = 0
+service_charge = 0
+discount_rate = .20
 
-    service_charge = 0
-    discount_rate = .20
+while count <= 6:
+    choice = input("\nEnter package (A, B, C): ") 
 
-    # calculate discount
-    if choice == 'a':
-        base_rate = 12.95
-        base_hour = 10
+    if choice == 'a' or choice == 'b' or choice == 'c':
 
-        # check for discount
-        if n == 'y':
-            discount = base_rate * discount_rate 
-            message = "with a"
-        else:
-            discount = 0
-            message = "with out a"
-
-        # check if hours are greater than 744
+        hours = int(input('Enter hours used: '))
         if hours >= 744:
             print("Hours cannot exceed 744")
-            return
+            break
+        else: 
+            charity = input("Are you a non-profit organization?(y/n): ")
 
-        # calculate additional hours 
-        if hours > base_hour:
-            additional_hours = hours - base_hour
-        else:
-            additional_hours = 0
+            if choice == 'a':
+                base_rate = 12.95
+                base_hour = 10
 
-        service_charge = (additional_hours * 4.00)
+                if charity == 'y':
+                    discount = base_rate * discount_rate 
+                else:
+                    discount = 0
 
-        total = service_charge + (base_rate - discount)
+            
+                    if hours > base_hour:
+                        additional_hours = hours - base_hour
+                        print("Additional Hours: ", additional_hours)
+                    else:
+                        additional_hours = 0
+                
+                    service_charge = (additional_hours * 4.00)
+                    total = service_charge + (base_rate - discount)
 
-        print("\nTotal Package Deal: $",total,"per month",message,"$",discount,"discount\n")
+                    print("\nThe service charge is: $", total)
+                    #print("\nTotal Package Deal: $",total,"per month",message,"$",discount,"discount\n")
 
-    elif choice == 'b':
-        base_rate = 14.95
-        base_hour = 20
+                print("\nThe service charge is: $", service_charge + (base_rate - discount))
 
-        if n == 'y':
-            discount = base_rate * discount_rate 
-            message = "with"
-        else:
-            discount = 0
-            message = "with out"
-
-        # check if hours are greater than 744
-        if hours >= 744:
-            print("Hours cannot exceed 744")
-            return
-
-        # calculate additional hours 
-        if hours > base_hour:
-            additional_hours = hours - base_hour
-        else:
-            additional_hours = 0
-
-        # multiply the additional_hours by the extra $2.00
-        service_charge = (additional_hours * 2.00)
-
-        # calculate the total
-        total = service_charge + (base_rate - discount)
-
-        #print("The service charge for package", choice, "is", total, "per month")
-        print("\nTotal Package Deal: $"'{0:.2f}'.format(total),"per month",message,"a $",discount,"discount\n")
-    elif choice == 'c':
-        base_rate = 35.95
-
-        if n == 'y':
-            discount = base_rate * discount_rate 
-            message = "with"
-        else:
-            discount = 0
-            message = "with out"
-
-        # check if hours are greater than 744
-        if hours >= 744:
-            print("Hours cannot exceed 744")
-            return
-
-        total = service_charge + (base_rate - discount)
-
-        print("\nTotal Package Deal:",total,"per month",message,"a $",'{0:.2f}'.format(discount),"discount\n")
-    else: 
-        print("That's not an option")
-
-    return
-
-i = 1
-
-# simple while loop 
-while i <= 6:
-
-    pkg = input("\nEnter package (A, B, C): ") 
-
-    if pkg == 'a' or pkg == 'b' or pkg == 'c':
-        hrs = int(input('Enter hours used: '))
-        isNonProfit = input("Are you a non-profit organization?(y/n): ")
+                print("\nThe service charge is: $", total)
+            elif choice == 'b':
+                print("\nPackage B: 20 hours of access for $14.95 per month. Additional hours are $2.00 per hour.")
+            elif choice == 'c':
+                print("\nPackage C: Unlimited access for $35.95 per month.")
+            else:
+                print("\nDone")
     else:
         print("That's not an option!")
-        i += 1
+        count = count + 1
 
-    calculate(pkg, hrs, isNonProfit)
-
-    i += 1
+#     # calculate discount
+#     if choice == 'a':
+#         base_rate = 12.95
+#         base_hour = 10
+# 
+#         # check for discount
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with a"
+#         else:
+#             discount = 0
+#             message = "with out a"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         # calculate additional hours 
+#         if hours > base_hour:
+#             additional_hours = hours - base_hour
+#         else:
+#             additional_hours = 0
+# 
+#         service_charge = (additional_hours * 4.00)
+# 
+#         total = service_charge + (base_rate - discount)
+# 
+#         print("\nTotal Package Deal: $",total,"per month",message,"$",discount,"discount\n")
+# 
+#     elif choice == 'b':
+#         base_rate = 14.95
+#         base_hour = 20
+# 
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with"
+#         else:
+#             discount = 0
+#             message = "with out"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         # calculate additional hours 
+#         if hours > base_hour:
+#             additional_hours = hours - base_hour
+#         else:
+#             additional_hours = 0
+# 
+#         # multiply the additional_hours by the extra $2.00
+#         service_charge = (additional_hours * 2.00)
+# 
+#         # calculate the total
+#         total = service_charge + (base_rate - discount)
+# 
+#         #print("The service charge for package", choice, "is", total, "per month")
+#         print("\nTotal Package Deal: $"'{0:.2f}'.format(total),"per month",message,"a $",discount,"discount\n")
+#     elif choice == 'c':
+#         base_rate = 35.95
+# 
+#         if n == 'y':
+#             discount = base_rate * discount_rate 
+#             message = "with"
+#         else:
+#             discount = 0
+#             message = "with out"
+# 
+#         # check if hours are greater than 744
+#         if hours >= 744:
+#             print("Hours cannot exceed 744")
+#             return
+# 
+#         total = service_charge + (base_rate - discount)
+# 
+#         print("\nTotal Package Deal:",total,"per month",message,"a $",'{0:.2f}'.format(discount),"discount\n")
+#     else: 
+#         print("That's not an option")
+# 
+#     return
