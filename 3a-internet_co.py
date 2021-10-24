@@ -199,6 +199,7 @@
 #     i += 1
 
 count = 0
+discount = 0
 service_charge = 0
 additional_hours = 0
 discount_rate = .20
@@ -218,8 +219,6 @@ while count <= 6:
 
             if charity == 'y':
                 discount = 1
-            else:
-                discount = 0
 
             if choice == 'a':
 
