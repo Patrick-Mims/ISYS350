@@ -2,13 +2,16 @@
 
 count = 1
 
-prop_value= int(input("Enter property value: "))
+prop_value = int(input("Enter property value: "))
 prop_life = int(input("Enter property life: "))
+
+pv = "{:.2f}".format(prop_value)
+pf = "{:.1f}".format(prop_life)
 
 print("\n")
 print("\tDouble Declining Depreciation Table\n")
-print("\tProperty value: ", prop_value)
-print("\tProperty life: ", prop_life,"\n")
+print("\tProperty value: $",pv)
+print("\tProperty life: ", pf,"\n")
 
 year = "Year"
 begin_year= "Value at"
