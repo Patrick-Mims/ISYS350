@@ -30,7 +30,7 @@ col_8 = "Interest"
 col_9 = "Principal"
 col_10 = "Balance"
 
-print (report.rjust(40, ' '), "\n")
+print ("\n",report.rjust(39, ' '),"\n")
 print (ln.rjust(15, ' '), "$", loan)
 print (ir.rjust(24, ' '),rate,'%')
 print (tm.rjust(25, ' '), term)
