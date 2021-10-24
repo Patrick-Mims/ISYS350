@@ -1,4 +1,10 @@
 #!/usr/bin/python
+# Patrick Mims
+# Assignment 3A
+# Class: ISYS-350 section 2
+# Professor: David Chao
+# Date: 10.20.21 
+# #
 
 additional_hours = 0
 count = 0
