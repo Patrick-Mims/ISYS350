@@ -20,8 +20,8 @@ b_year = "Begin Year"
 d_year = "During Year" 
 e_year = "To End Year" 
 
-print (year.rjust(12,' '), begin_year.rjust(17, ' '), during_year.rjust(24, ' '), total_depreciation.rjust(25, ' '))
-print (empty.rjust(12,' '), b_year.rjust(19, ' '), d_year.rjust(21, ' '), e_year.rjust(19, ' '))
+print (year.rjust(12,' '), begin_year.rjust(15, ' '), during_year.rjust(34, ' '), total_depreciation.rjust(25, ' '))
+print (empty.rjust(12,' '), b_year.rjust(17, ' '), d_year.rjust(31, ' '), e_year.rjust(19, ' '))
 print("\t__________________________________________________________________________________________________________\n")
 
 count = 0
@@ -32,5 +32,13 @@ while prop_life > count:
     count = count + 1
     depreciation = prop_value * 2 / prop_life
     total_depreciation = total_depreciation + depreciation
-    print("\t{0}{1:20.2f}{2:20.2f}{3:20.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2)))
+
+    output_23 = "\t{0}{1:^30.2f}{2:^32.2f}{3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
+    output_20 = "\t{0}{1:^29.2f}{2:^32.2f}{3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
+
+    if(count < 10):
+        print(output_23)
+    else: 
+        print(output_20)
+
     prop_value = prop_value - depreciation
