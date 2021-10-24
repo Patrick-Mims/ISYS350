@@ -1,8 +1,12 @@
 #/usr/bin/python
 
-loan_amount = int(input("Enter Loan Amount: "))
+amt_loan = int(input("Enter Loan Amount: "))
 interest_rate = float(input("Enter interest rate: "))
 months = int(input("Enter term in months: "))
+
+loan = "{:.2f}".format(amt_loan)
+rate = "{:.2f}".format(interest_rate)
+term = "{:.1f}".format(months)
 
 report = "Vehicle Loan Amortization Table"
 
@@ -22,9 +26,9 @@ col_9 = "Principal"
 col_10 = "Balance"
 
 print (report.rjust(40, ' '), "\n")
-print (ln.rjust(15, ' '))
-print (ir.rjust(24, ' '))
-print (tm.rjust(25, ' '))
+print (ln.rjust(15, ' '), "$", loan)
+print (ir.rjust(24, ' '),rate,'%')
+print (tm.rjust(25, ' '), term)
 print ("\n")
 print (col_1.rjust(17, ' '), col_2.rjust(17, ' '), col_3.rjust(24, ' '), col_4.rjust(25, ' '), col_5.rjust(20, ' '))
 print (col_6.rjust(17, ' '), col_7.rjust(17, ' '), col_8.rjust(23, ' '), col_9.rjust(26, ' '), col_10.rjust(18, ' '))
@@ -33,15 +37,15 @@ print ("\n")
 
 count = 1
 
-monthly_payment = (loan_amount * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
+monthly_payment = (amt_loan * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
 
 while count <= months:
-    interest_amount = (loan_amount * (interest_rate / months))
-    principal_amount = monthly_payment - interest_amount
-    balance_remaining = (loan_amount - principal_amount)
+    interest_amount = (amt_loan * (interest_rate / months))
+    amt_principal = (monthly_payment - interest_amount)
+    remaining_balance = (amt_loan - amt_principal)
 
-    print ("\t{0}{1:25.2f}{2:30.2f}{3:30.2f}{4:30.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(principal_amount, 2), round(balance_remaining, 2)))
+    print ("\t{0}{1:25.2f}{2:30.2f}{3:30.2f}{4:30.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(amt_principal, 2), round(remaining_balance, 2)))
 
     count = count + 1
 
-    loan_amount = balance_remaining 
+    amt_loan = remaining_balance 
