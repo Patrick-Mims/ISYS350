@@ -44,7 +44,10 @@ while count <= months:
     amt_principal = (monthly_payment - interest_amount)
     remaining_balance = (amt_loan - amt_principal)
 
-    print ("\t{0}{1:25.2f}{2:30.2f}{3:30.2f}{4:30.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(amt_principal, 2), round(remaining_balance, 2)))
+    if count < 10:
+        print ("\t{0}{1:25.2f}{2:30.2f}{3:20.2f}{4:22.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(amt_principal, 2), round(remaining_balance, 2)))
+    else:
+        print ("\t{0}{1:24.2f}{2:30.2f}{3:20.2f}{4:22.2f}".format(count, round(monthly_payment, 2), round(interest_amount, 2), round(amt_principal, 2), round(remaining_balance, 2)))
 
     count = count + 1
 
