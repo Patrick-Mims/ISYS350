@@ -200,6 +200,7 @@
 
 count = 0
 service_charge = 0
+additional_hours = 0
 discount_rate = .20
 
 while count <= 6:
@@ -208,37 +209,29 @@ while count <= 6:
     if choice == 'a' or choice == 'b' or choice == 'c':
 
         hours = int(input('Enter hours used: '))
+
         if hours >= 744:
             print("Hours cannot exceed 744")
             break
         else: 
             charity = input("Are you a non-profit organization?(y/n): ")
 
+            if charity == 'y':
+                discount = 1
+            else:
+                discount = 0
+
             if choice == 'a':
-                base_rate = 12.95
-                base_hour = 10
 
-                if charity == 'y':
-                    discount = base_rate * discount_rate 
-                else:
-                    discount = 0
-
-            
-                    if hours > base_hour:
-                        additional_hours = hours - base_hour
-                        print("Additional Hours: ", additional_hours)
-                    else:
-                        additional_hours = 0
+                if discount:
+                    discount = (12.95 * discount_rate) 
+                    
+                additional_hours = (hours - 10) 
                 
-                    service_charge = (additional_hours * 4.00)
-                    total = service_charge + (base_rate - discount)
-
-                    print("\nThe service charge is: $", total)
-                    #print("\nTotal Package Deal: $",total,"per month",message,"$",discount,"discount\n")
-
-                print("\nThe service charge is: $", service_charge + (base_rate - discount))
+                total = ((additional_hours * 4.00) + (12.95 - discount))
 
                 print("\nThe service charge is: $", total)
+
             elif choice == 'b':
                 print("\nPackage B: 20 hours of access for $14.95 per month. Additional hours are $2.00 per hour.")
             elif choice == 'c':
@@ -246,7 +239,7 @@ while count <= 6:
             else:
                 print("\nDone")
     else:
-        print("That's not an option!")
+        print("That choice is not an option.")
         count = count + 1
 
 #     # calculate discount
