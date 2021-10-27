@@ -38,7 +38,7 @@ print ("\n")
 
 count = 1
 
-monthly_payment = (amt_loan * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months) 
+monthly_payment = (amt_loan * (interest_rate / months)) / (1 - (1 + interest_rate / 12) **-months)
 
 while count <= months:
     interest_amount = (amt_loan * (interest_rate / months))

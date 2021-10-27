@@ -19,9 +19,9 @@ during_year = "Depreciation"
 total_depreciation = "Total depreciation"
 
 empty = " "
-b_year = "Begin Year" 
-d_year = "During Year" 
-e_year = "To End Year" 
+b_year = "Begin Year"
+d_year = "During Year"
+e_year = "To End Year"
 
 print (year.rjust(12,' '), begin_year.rjust(15, ' '), during_year.rjust(34, ' '), total_depreciation.rjust(25, ' '))
 print (empty.rjust(12,' '), b_year.rjust(17, ' '), d_year.rjust(31, ' '), e_year.rjust(19, ' '))
