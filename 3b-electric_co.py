@@ -11,8 +11,11 @@ while count < 6:
         print(".45")
     elif (used_kwh > 150 and used_kwh <= 450):
         print(".65")
-    elif (used_kwh > 450):
+    elif (used_kwh > 450 and used_kwh <= 2000):
         print(".80")
+    #elif (used_kwh > 2000):
+    else:
+        print("Kilowatt Hours cannot be more than 2000!");
 
     count = count + 1
 
