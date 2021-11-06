@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-count = 1
-
 prop_value = int(input("Enter property value: "))
 prop_life = int(input("Enter property life: "))
 
@@ -27,12 +25,11 @@ print (year.rjust(12,' '), begin_year.rjust(15, ' '), during_year.rjust(34, ' ')
 print (empty.rjust(12,' '), b_year.rjust(17, ' '), d_year.rjust(31, ' '), e_year.rjust(19, ' '))
 print("\t__________________________________________________________________________________________________________\n")
 
-count = 0
+count = 1
 depreciation = 0
 total_depreciation = 0
 
-while prop_life > count:
-    count = count + 1
+while prop_life >= count:
     depreciation = prop_value * 2 / prop_life
     total_depreciation = total_depreciation + depreciation
 
@@ -41,7 +38,8 @@ while prop_life > count:
 
     if(count < 10):
         print(output_23)
-    else: 
+    else:
         print(output_20)
 
     prop_value = prop_value - depreciation
+    count = count + 1
