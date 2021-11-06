@@ -15,4 +15,6 @@ def goalSeek(presentValue, rate, target):
 		futureValue = presentValue * (1 + rate)** years 
 
 	return years 
-        
+
+def showDepreciationTable(prop, life):
+    print("table")
