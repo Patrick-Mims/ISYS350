@@ -12,7 +12,8 @@ output = "It will take you a total of {:,.0f} years to reach your target."
 
 print(output.format(years))
 
-propertyListing = int(input("Property Listing: "))
-loanLife = int(input("Life: "))
+print("\nPart B")
+prop_value = int(input("Enter property value (2000): "))
+prop_life = int(input("Enter property life (10): "))
 
-fs.showDepreciationTable(propertyListing, loanLife)
+fs.showDepreciationTable(prop_value, prop_life)
