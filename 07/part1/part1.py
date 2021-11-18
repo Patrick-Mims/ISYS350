@@ -1,24 +1,20 @@
 #!/usr/bin/python
 
-i = 0
+check = 1
 
-phrase = input("Enter a search phrase: ") 
+while check != 0:
+    print("\n")
+    phrase = input("Enter a search phrase: ") 
+    answer = input("Would you like to enter another phrase? (Y/N) ")
 
-print("Text Phrase: ", phrase)
-
-while i < 5:
-    print("i > ", i)
-
-    answer = input("Would you like to enter another phrase? (Y/N)")
-
-    if(answer == 'N') or (answer == 'n'):
-        print("No")
-    elif(answer == 'Y') or (answer == 'y'):
-        print("Yes")
+    if((answer == 'N') or (answer == 'n')):
+        check = 0
+    elif((answer == 'Y') or (answer == 'y')):
+        check = 1
     else:
-        print("Try Again")
+        check = 0
 
-    i = i + 1
+print("Enter paragraphs for analysis: ")
 
 #   Part 1: 
 #
