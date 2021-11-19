@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link type="text/css" href="css/main.css" rel="stylesheet"/>
+        <title>Montly Payment Calculator</title>
+    </head>
+    <body>
+        <div id="wrapper" style="width:500px;border: 1px solid #c00; margin-left:auto; margin-right: auto; padding: 10px">
+            <div>Montly Payment Calculator</div>
+            <div>Enter loan:<input type="text" maxlength="20" size="20"></div>
+            <div>Select rate:
+            <select> 
+                <option value=".03">3%</option> 
+                <option value=".035">3.5%</option> 
+                <option value=".04">4%</option>  
+                <option value=".045">4.5%</option>  
+                <option value=".05">5%</option>  
+                <option value=".055">5.5%</option>  
+                <option value=".06">6%</option>  
+            </select>  
+            </div>
+            <div>
+                Select term:
+            </div>
+            <div>
+                <input type="radio" id="html" name="term" value="ten">
+                <label for="html">10 Year</label><br>
+                <input type="radio" id="css" name="term" value="fifteen">
+                <label for="css">15 Year</label><br>
+                <input type="radio" id="javascript" name="term" value="thirty">
+                <label for="javascript">30 Year</label>
+            <div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
