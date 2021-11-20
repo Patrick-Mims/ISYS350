@@ -1,18 +1,35 @@
+/*
+ * Author: Patrick Mims
+ * Date: 11.18.21
+ * Assignment: 7
+ * Professor: David Chao
+ * Purpose: this script simply calculates the monthly value
+ * */
+
 (function() {
-     let loanAmount = document.getElementById("loanAmount");
-     let submit = document.getElementById("submit");
-     let monthlyPayment = document.getElementById("monthlyPayment");
-     let interestRate = document.getElementById("interestRate");
-     let vetDiscount = document.getElementById("discount");
+     let interestRate = document.getElementById("interestRate"),
+         loan = document.getElementById("loanAmount"),
+         payment = document.getElementById("monthlyPayment"),
+         submit = document.getElementById("submit"),
+         vetDiscount = document.getElementById("discount");
+     let term = document.getElementsByName('term');
 
-     submit.addEventListener("click", function() {
-         let result = (interestRate.value * loanAmount.value);
+         submit.addEventListener("click", function() {
 
-         if(discount.checked == true) { 
-            let vetDiscount = (result * 0.5); 
-            result = (result - vetDiscount);
-         }
+             for(i = 0; i < term.length; i++) {
+                 if(term[i].checked)
+                 {
+                    var t = term[i].value;
+                 }
+             }
 
-         monthlyPayment.value = result;
-     });
+             let total = t * (interestRate.value * loan.value);
+
+             if(discount.checked == true) { 
+                let vetDiscount = (total * 0.5); 
+                total = (total - vetDiscount);
+             }
+
+             payment.value = "$" + total;
+         });
  })();
