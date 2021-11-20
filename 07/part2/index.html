@@ -5,11 +5,13 @@
         <title>Montly Payment Calculator</title>
     </head>
     <body>
-        <div id="wrapper" style="width:500px;border: 1px solid #c00; margin-left:auto; margin-right: auto; padding: 10px">
+        <div id="wrapper" style="width:500px;border: 1px solid #efefef; margin-left:auto; margin-right: auto; padding: 10px">
             <div>Montly Payment Calculator</div>
-            <div>Enter loan:<input type="text" maxlength="20" size="20"></div>
+            <br/>
+            <div>Enter loan:&nbsp;<input id="loanAmount" type="text" maxlength="20" size="20"></div>
+            <br/>
             <div>Select rate:
-            <select> 
+            <select id="interestRate"> 
                 <option value=".03">3%</option> 
                 <option value=".035">3.5%</option> 
                 <option value=".04">4%</option>  
@@ -19,6 +21,7 @@
                 <option value=".06">6%</option>  
             </select>  
             </div>
+            <br/>
             <div>
                 Select term:
             </div>
@@ -30,6 +33,12 @@
                 <input type="radio" id="javascript" name="term" value="thirty">
                 <label for="javascript">30 Year</label>
             <div>
+            <br/>
+            <div><input type="checkbox" id="discount" name="discount">Veteran Rage Reduces 0.5%</div>
+            <br/>
+            <div>Monthly Payment:&nbsp;<input id="monthlyPayment" type="text" maxlength="20" size="20"></div>
+            <br/>
+			<div><input id="submit" type="button" value="Calculate Payment"></div>
         </div>
         <script src="js/script.js"></script>
     </body>
