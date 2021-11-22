@@ -1,35 +1,40 @@
-/*
- * Author: Patrick Mims
+/* Author: Patrick Mims
  * Date: 11.18.21
  * Assignment: 7
  * Professor: David Chao
- * Purpose: this script simply calculates the monthly value
+ * Purpose: this script simply calculates the monthly value 1347.13
  * */
 
 (function() {
-     let interestRate = document.getElementById("interestRate"),
-         loan = document.getElementById("loanAmount"),
-         payment = document.getElementById("monthlyPayment"),
-         submit = document.getElementById("submit"),
-         vetDiscount = document.getElementById("discount");
-     let term = document.getElementsByName('term');
+     var discount = document.getElementById("discount");
+     var interestRate = document.getElementById("interestRate");
+     var loan = document.getElementById("loanAmount");
+     var payment = document.getElementById("monthlyPayment");
+     var submit = document.getElementById("submit");
+     var term = document.getElementsByName('term');
 
-         submit.addEventListener("click", function() {
-
-             for(i = 0; i < term.length; i++) {
-                 if(term[i].checked)
-                 {
-                    var t = term[i].value;
-                 }
+     submit.addEventListener("click", function() {
+         for(i = 0; i < term.length; i++) {
+             if(term[i].checked)
+             {
+                var t = term[i].value;
              }
+         }
 
-             let total = t * (interestRate.value * loan.value);
+         var ir = (loan.value * (interestRate.value * 0.01)) / t;
+         var p = ((loan.value / (t * 12)) + ir);
 
-             if(discount.checked == true) { 
-                let vetDiscount = (total * 0.5); 
-                total = (total - vetDiscount);
-             }
+         /* test data */
+         console.log("Interest Rate: ", (interestRate.value * 0.01));
+         console.log("Loan: ", loan.value);
+         console.log("Term: ", (t * 12));
+         console.log("Ir: ", ir);
+         console.log("P: ", p)
 
-             payment.value = "$" + total;
-         });
+         if(discount.checked == true) { 
+             payment.value = "$" + (p - (p * discount.value));
+         } else {
+             payment.value = "$" + p;
+         }
+     });
  })();
