@@ -18,7 +18,7 @@
     for(i = 0; i < term.length; i++) {
       if(term[i].checked)
       {
-        var t = term[i].value;
+        var termInMonths = (term[i].value * 12);
       }
     }
 
@@ -27,10 +27,7 @@
     }
 
     var convertedInterestRate = ((interestRate.value - vetDiscount) * 0.01);
-    var termInMonths = (t * 12);
-    var monthlyPaymentNumerator = loan.value * (convertedInterestRate / 12);
-    var monthlyPaymentDenominator = (1 - (1 + (convertedInterestRate / 12))**-termInMonths);
-    var monthlyPayment = ((monthlyPaymentNumerator) / (monthlyPaymentDenominator));
+    var monthlyPayment = (loan.value * (convertedInterestRate / 12) / (1 - (1 + (convertedInterestRate / 12))**-termInMonths));
 
     payment.value = "$" + monthlyPayment.toFixed(2);
   });
