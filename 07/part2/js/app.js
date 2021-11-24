@@ -5,11 +5,11 @@
  * Purpose: Simple Mortgage Calculator
  * */
 (function() {
+  var button = document.getElementById("submit");
   var discount = document.getElementById("discount");
-  var rate = document.getElementById("interestRate");
   var loan = document.getElementById("loanAmount");
   var payment = document.getElementById("monthlyPayment");
-  var button = document.getElementById("submit");
+  var rate = document.getElementById("interestRate");
   var term = document.getElementsByName('term');
 
   button.addEventListener("click", function() {
