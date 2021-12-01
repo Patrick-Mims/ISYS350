@@ -3,6 +3,7 @@
  * Assignment: 7
  * Professor: David Chao
  * Purpose: Simple Mortgage Calculator
+ * Version: 2.0
  * */
 (function() {
   var button = document.getElementById("submit");
@@ -13,7 +14,7 @@
   var term = document.getElementsByName('term');
 
   button.addEventListener("click", function() {
-    var vetDiscount = 0.0, termInMonths = 120;
+    let mp = 0.0, termInMonths = 120, vetDiscount = 0.0;
 
     /* Calculate Term */
     for(i = 0; i < term.length; i++) {
@@ -22,16 +23,19 @@
       }
     }
 
-    /* Discount? */
+    interest = (rate.value/100/12);
+
+    /* Discount */
     if(discount.checked == true) {
       vetDiscount = (50 * 0.01);
     }
 
-    /* Calculate Monthly Payment */
-    const convertedInterestRate = ((rate.value - vetDiscount) * 0.01);
-    const monthlyPayment = (loan.value * (convertedInterestRate / 12) / (1 - (1 + (convertedInterestRate / 12))**-termInMonths));
+    /* Calculate Monthly Payment with Interest */
+    interest = (((rate.value - vetDiscount))/100/12);
+
+    mp = (loan.value * interest * (Math.pow(1 + interest, termInMonths)) / (Math.pow(1 + interest, termInMonths) - 1));
 
     /* Output */
-    payment.value = "$" + monthlyPayment.toFixed(2);
+    payment.value = "$" + mp.toFixed(2);
   });
 })();
