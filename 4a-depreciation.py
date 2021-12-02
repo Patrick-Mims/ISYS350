@@ -31,10 +31,13 @@ total_depreciation = 0
 
 while prop_life >= count:
     depreciation = prop_value * 2 / prop_life
+    if count == prop_life:
+        depreciation = prop_value
+
     total_depreciation = total_depreciation + depreciation
 
-    output_23 = "\t{0}{1:^30.2f}{2:^32.2f}{3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
-    output_20 = "\t{0}{1:^29.2f}{2:^32.2f}{3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
+    output_23 = "\t{0}{1:^30.2f}{2:^32.2f}${3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
+    output_20 = "\t{0}{1:^29.2f}{2:^32.2f}${3:^1.2f}".format(count, round(prop_value, 2), round(depreciation, 2), round(total_depreciation, 2))
 
     if(count < 10):
         print(output_23)
