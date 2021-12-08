@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link type="text/css" href="css/style.css" rel="stylesheet"/>
+        <title>Montly Payment Calculator</title>
+    </head>
+    <body>
+        <div id="wrapper" style="width:500px;border: 1px solid #efefef; margin-left:auto; margin-right: auto; padding: 10px">
+            <div>Montly Payment Calculator</div>
+            <br/>
+            <div>Enter loan:&nbsp;<input id="loanAmount" type="text" maxlength="20" size="20" value=""></div>
+            <br/>
+            <div>Select rate:
+            <select id="interestRate">
+                <option value="3">3%</option>
+                <option value="3.5">3.5%</option>
+                <option value="4">4%</option>
+                <option value="4.5">4.5%</option>
+                <option value="5">5%</option>
+                <option value="5.5">5.5%</option>
+                <option value="6">6%</option>
+            </select>
+            </div>
+            <br/>
+            <div>
+                Select term:
+            </div>
+            <div>
+                <input type="radio" id="ten" name="term" value="10" checked="checked">
+                <label for="tenYear">10 Year</label><br>
+                <input type="radio" id="fifteen" name="term" value="15">
+                <label for="fifteenYear">15 Year</label><br>
+                <input type="radio" id="thirty" name="term" value="30">
+                <label for="thirtyYear">30 Year</label>
+            <div>
+            <br/>
+            <div><input type="checkbox" id="discount" name="discount" value="0.5">Veteran Rage Reduces 0.5%</div>
+            <br/>
+            <div>Affordable Payment:&nbsp;<input id="affordablePayment" type="text" maxlength="20" size="18"></div>
+            <br/>
+            <div>Monthly Payment:&nbsp;<input id="monthlyPayment" type="text" maxlength="20" size="20"></div>
+            <br/>
+          <div><input id="submit" type="button" value="Calculate Payment"></div>
+        </div>
+        <script src="js/app.js"></script>
+    </body>
+</html>
