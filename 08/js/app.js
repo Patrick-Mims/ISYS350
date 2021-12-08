@@ -1,9 +1,9 @@
 /* Author: Patrick Mims
- * Date: 11.18.21
- * Assignment: 7
+ * Date: 12.8.21
+ * Assignment: 8
  * Professor: David Chao
  * Purpose: Simple Mortgage Calculator
- * Version: 2.0
+ * Version: 1.0
  * */
 (function() {
   var affordable = document.getElementById("affordablePayment");
