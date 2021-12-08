@@ -37,7 +37,7 @@
     mp = (loan.value * interest * (Math.pow(1 + interest, termInMonths)) / (Math.pow(1 + interest, termInMonths) - 1));
 
     /* Check if it's greater than or less than */
-    (mp > affordable.value) ? payment.style.backgroundColor = "#c00000" : payment.style.backgroundColor = "#006400";
+    (mp >= affordable.value) ? payment.style.backgroundColor = "#c00000" : payment.style.backgroundColor = "#006400";
 
     /* Output */
     payment.value = "$" + mp.toFixed(2);
